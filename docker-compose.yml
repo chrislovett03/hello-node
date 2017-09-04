@@ -1,38 +1,29 @@
-
-version: "3"
+version: '3.1'
 services:
+    web:
+        #Use following image to download from Docker Hub
+        #image: chrch/docker-pets:latest
+        image: dtr.clovett.dtcntr.net/engineering/hello-node
+        deploy:
+            mode: replicated
+            replicas: 2
+        healthcheck:
+            interval: 10s
+            timeout: 5s
+            retries: 3
+        ports:
+            - 8081:8081
 
-web:
-  image: dtr.clovett.dtcntr.net/engineering/hello-node
-  networks:
-    - frontend
-    - backend
-  deploy:
-    mode: replicated
-    replicas: 1
-    labels: [APP=VOTING]
-    restart_policy:
-      condition: on-failure
-      delay: 10s
-      max_attempts: 3
-      window: 120s
-    placement:
-      constraints: [node.role == manager]
-
-visualizer:
-  image: dockersamples/visualizer:stable
-  ports:
-    - "8080:8080"
-  stop_grace_period: 1m30s
-  volumes:
-    - "/var/run/docker.sock:/var/run/docker.sock"
-  deploy:
-    placement:
-      constraints: [node.role == manager]
+    visualizer:
+      image: dockersamples/visualizer:stable
+      ports:
+        - "8082:8082"
+      stop_grace_period: 1m30s
+      volumes:
+        - "/var/run/docker.sock:/var/run/docker.sock"
+      deploy:
+        placement:
+          constraints: [node.role == manager]
 
 networks:
-  frontend:
-  backend:
-
-volumes:
-  db-data:
+    backend:
