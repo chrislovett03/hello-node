@@ -1,14 +1,23 @@
 {
-  "name": "agency",
-  "title": "Agency",
-  "version": "3.3.7+1",
-  "homepage": "http://startbootstrap.com/template-overviews/agency",
-  "author": "Start Bootstrap",
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christinelovett/hello-node.git"
   },
-  "devDependencies": {
+  "name": "hello-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christine Lovett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christinelovett/hello-node/issues"
+  },
+  "homepage": "https://github.com/christinelovett/hello-node#readme",
+  "dependencies": {
+    "express": "^4.15.4",
     "bootstrap": "^3.3.7",
     "browser-sync": "^2.13.0",
     "font-awesome": "^4.6.3",
@@ -20,9 +29,5 @@
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^1.5.4",
     "jquery": "^1.11.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BlackrockDigital/startbootstrap-agency.git"
   }
 }
