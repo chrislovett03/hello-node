@@ -1,7 +1,7 @@
 version: '3.1'
 services:
     web:
-        image: dtr.clovett.dtcntr.net/engineering/hello-node
+        image: clovett07/hello-node
         deploy:
             mode: replicated
             replicas: 2
