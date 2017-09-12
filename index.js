@@ -18,5 +18,5 @@ app.get('/', function(req, res) {
 
 // Launch listenting server on port 8081
 app.listen(8081, function() {
-  console.log('app listening on port 8081')
+  console.log('app listening on port 8081!')
 })
