@@ -1,1 +1,1 @@
-# hello-node
+# hello-node:1.0
