@@ -11,7 +11,8 @@ services:
             retries: 3
         ports:
             - 8081:8081
-
+        networks:
+           backend
     visualizer:
       image: dockersamples/visualizer:stable
       ports:
