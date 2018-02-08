@@ -5,7 +5,7 @@ variables:
 image: docker:latest
 
 before_script:
-  - docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER
+  - docker login -u admin -p password https://dtr.clovett.dtcntr.net
 
 build:
   stage: build
