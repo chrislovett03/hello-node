@@ -5,12 +5,12 @@ variables:
 image: docker:latest
 
 before_script:
-  - sudo docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER
+  - docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER
 
 build:
   stage: build
   script:
     - export DOCKER_HOST="tcp://localhost:2375"
-    - sudo docker build --pull -t dtr.example.com/admin/"$CI_PROJECT_NAME"_build:$CI_JOB_ID .
-    - sudo docker push dtr.example.com/admin/"$CI_PROJECT_NAME"_build:$CI_JOB_ID
-    - sudo docker rmi dtr.example.com/admin/"$CI_PROJECT_NAME"_build:$CI_JOB_ID
+    - docker build --pull -t dtr.example.com/admin/"$CI_PROJECT_NAME"_build:$CI_JOB_ID .
+    - docker push dtr.example.com/admin/"$CI_PROJECT_NAME"_build:$CI_JOB_ID
+    - docker rmi dtr.example.com/admin/"$CI_PROJECT_NAME"_build:$CI_JOB_ID
