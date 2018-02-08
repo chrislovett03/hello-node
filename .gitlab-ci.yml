@@ -10,7 +10,7 @@ before_script:
 build:
   stage: build
   script:
-    - export DOCKER_HOST="tcp://localhost:2375"
+    - export DOCKER_HOST="tcp://ucp.clovett.dtcntr.net:443"
     - docker build --pull -t dtr.example.com/admin/"$CI_PROJECT_NAME"_build:$CI_JOB_ID .
     - docker push dtr.example.com/admin/"$CI_PROJECT_NAME"_build:$CI_JOB_ID
     - docker rmi dtr.example.com/admin/"$CI_PROJECT_NAME"_build:$CI_JOB_ID
