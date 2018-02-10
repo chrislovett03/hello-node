@@ -1,1 +1,1 @@
-#hello-node:2.3
+#hello-node:2.4
