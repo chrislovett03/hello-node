@@ -10,6 +10,8 @@ before_script:
 build:
   stage: build
   script:
-    - docker build --pull -t dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID .
+    - docker build --pull -t dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID -t dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest .
     - docker push dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID
+    - docker push dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
     - docker rmi dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID
+    - docker rmi dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
