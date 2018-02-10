@@ -5,11 +5,11 @@ variables:
 image: docker:latest
 
 before_script:
-  - sudo docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER
+  - docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER
 
 build:
   stage: build
   script:
-    - sudo docker build --pull -t dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID .
-    - sudo docker push dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID
-    - sudo docker rmi dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID
+    - docker build --pull -t dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID .
+    - docker push dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID
+    - docker rmi dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID
