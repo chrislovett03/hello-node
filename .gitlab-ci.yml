@@ -7,7 +7,11 @@ image: docker:latest
 before_script:
   - docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER
 
-build:
+stages:
+  - build
+  # - deploy
+
+job1:
   stage: build
   script:
     - docker build --pull -t dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID -t dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest .
@@ -15,3 +19,21 @@ build:
     - docker push dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
     - docker rmi dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID
     - docker rmi dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
+
+# job2:
+#   stage: deploy
+#   script:
+#     - mkdir $DOCKER_CERT_PATH
+#     - echo "$CA" > $DOCKER_CERT_PATH/ca.pem
+#     - echo "$CLIENT_CERT" > $DOCKER_CERT_PATH/cert.pem
+#     - echo "$CLIENT_KEY" > $DOCKER_CERT_PATH/key.pem
+#     - sudo docker login -u <username> -p <password> ${DTR_IPADDR}
+#     - sudo docker rmi dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
+#     - sudo docker pull dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
+#     - sudo docker service update --image dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest hello-node_web
+#   variables:
+#     DOCKER_TLS_VERIFY: "1"
+#     DOCKER_HOST: "tcp://34.224.107.113:2376"
+#     DOCKER_CERT_PATH: "certs"
+#   tags:
+#     - docker
