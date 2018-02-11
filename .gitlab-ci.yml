@@ -23,9 +23,9 @@ job1:
 job2:
   stage: build
   script:
-    - echo "$CA" > /root/.docker/ca.pem
-    - echo "$CLIENT_CERT" > /root/.docker/cert.pem
-    - echo "$CLIENT_KEY" > /root/.docker/key.pem
+    # - echo "$CA" > /root/.docker/ca.pem
+    # - echo "$CLIENT_CERT" > /root/.docker/cert.pem
+    # - echo "$CLIENT_KEY" > /root/.docker/key.pem
     - sudo docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER
     - sudo docker rmi dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
     - sudo docker pull dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
