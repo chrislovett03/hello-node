@@ -9,7 +9,7 @@ before_script:
 
 stages:
   - build
-  # - deploy
+  - deploy
 
 job1:
   stage: build
@@ -21,7 +21,7 @@ job1:
     - docker rmi dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
 
 job2:
-  stage: deploy
+  stage: build
   script:
     - mkdir cert_path
     - echo "$CA" > cert_path/ca.pem
