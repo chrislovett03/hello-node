@@ -23,7 +23,7 @@ job1:
 job2:
   stage: build
   script:
-    # - echo "$CA" > /root/.docker/ca.pem
+    - sudo curl -k https://dtr.clovett.dtcntr.net/ca -o> /root/.docker/ca.pem
     # - echo "$CLIENT_CERT" > /root/.docker/cert.pem
     # - echo "$CLIENT_KEY" > /root/.docker/key.pem
     - sudo docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER
