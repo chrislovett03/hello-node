@@ -27,5 +27,5 @@ job2:
     - sudo docker rmi dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
     - sudo docker pull dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
     - sudo docker service update --image dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest hello-node_web
-  variables:
-    DOCKER_HOST: "tcp://ucp.clovett.dtcntr.net:443"
+  # variables:
+  #   DOCKER_HOST: "tcp://ucp.clovett.dtcntr.net:443"
