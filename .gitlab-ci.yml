@@ -24,7 +24,6 @@ job2:
   stage: build
   script:
     - docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER
-    - docker rmi dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
     - docker pull dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
     - docker service update --image dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest hello-node_web
   # variable s:
