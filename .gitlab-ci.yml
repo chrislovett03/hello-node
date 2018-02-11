@@ -35,5 +35,3 @@ job2:
     DOCKER_TLS_VERIFY: "1"
     DOCKER_HOST: "tcp://34.224.107.113:2376"
     DOCKER_CERT_PATH: "certs"
-  tags:
-    - docker
