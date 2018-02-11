@@ -1,22 +1,26 @@
 version: '3.3'
 services:
     web:
-        image: dtr.clovett.dtcntr.net/admin/engineering
-        deploy:
-            mode: replicated
-            replicas: 2
+        image: dtr.clovett.dtcntr.net/admin/hello-node
         healthcheck:
             interval: 10s
             timeout: 5s
             retries: 3
         ports:
-            - 8081:8081
+            - 8088:8080
         networks:
-           backend
+            - swarm-overlay
+        deploy:
+          mode: replicated
+          replicas: 2
+          constraints:
+            - node.role == manager
+            - node.labels.orch == swarm
+
     visualizer:
       image: dockersamples/visualizer:stable
       ports:
-        - "8085:8085"
+        - "8085:8080"
       stop_grace_period: 1m30s
       volumes:
         - "/var/run/docker.sock:/var/run/docker.sock"
@@ -25,4 +29,4 @@ services:
           constraints: [node.role == manager]
 
 networks:
-    backend:
+  swarm-overlay:
