@@ -31,6 +31,6 @@ job2:
     - ssh-add ~/.ssh/id_rsa
     - ssh-keyscan -H $DEPLOYMENT_SERVER_IP >> ~/.ssh/known_hosts
   script:
-    - ssh root@$DEPLOYMENT_SERVER_IP "docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER; docker rmi dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest; docker pull dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest; docker service update --with-registry-auth --image dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest hello-node_web"
+    - ssh ubuntu@$DEPLOYMENT_SERVER_IP "docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER; docker rmi dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest; docker pull dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest; docker service update --with-registry-auth --image dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest hello-node_web"
   # variables:
   #   DOCKER_HOST: "tcp://ucp.clovett.dtcntr.net:443"
