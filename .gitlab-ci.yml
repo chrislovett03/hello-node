@@ -6,7 +6,6 @@ image: docker:latest
 
 before_script:
   - docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER
-  - export DOCKER_CONTENT_TRUST=1
 
 stages:
   - build
@@ -15,7 +14,6 @@ stages:
 job1:
   stage: build
   script:
-    - export DOCKER_CONTENT_TRUST=1
     - docker build --pull -t dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID -t dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest .
     - docker push dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":$CI_JOB_ID
     - docker push dtr.clovett.dtcntr.net/admin/"$CI_PROJECT_NAME":latest
