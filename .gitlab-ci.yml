@@ -1,4 +1,6 @@
 # Official docker image.
+variables:
+  DOCKER_DRIVER: overlay
 
 image: docker:latest
 
