@@ -6,6 +6,7 @@ image: docker:latest
 
 before_script:
   - docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER
+  - export DOCKER_CONTENT_TRUST=1
 
 stages:
   - build
