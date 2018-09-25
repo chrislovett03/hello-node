@@ -1,4 +1,4 @@
-FROM node:10.11.0-alpine
+FROM node:10.11-stretch
 WORKDIR /app
 COPY package.json /app
 RUN npm install
