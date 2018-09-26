@@ -1,38 +1,38 @@
 {
-"repository": {
-"type": "git",
-"url": "git+https://github.com/christinelovett/hello-node.git"
-},
-"name": "hello-node",
-"version": "1.0.0",
-"description": "",
-"main": "index.js",
-"scripts": {
-"test": "echo \"Error: no test specified\" && exit 1"
-},
-"author": "Christine Lovett",
-"license": "ISC",
-"bugs": {
-"url": "https://github.com/christinelovett/hello-node/issues"
-},
-"homepage": "https://github.com/christinelovett/hello-node#readme",
-"dependencies": {
-"bootstrap": "^3.3.7",
-"browser-sync": "^2.13.0",
-"ejs": "^2.5.7",
-"express": "^4.15.4",
-"font-awesome": "^4.6.3",
-"gulp": "^3.9.1",
-"gulp-clean-css": "^2.0.10",
-"gulp-header": "^1.8.7",
-"gulp-less": "^3.1.0",
-"gulp-rename": "^1.2.2",
-"gulp-sass": "^2.3.2",
-"gulp-uglify": "^1.5.4",
-"jade": "^1.11.0",
-"jquery": "^1.11.3",
-"nib": "^1.1.2",
-"nodemon": "^1.12.0",
-"stylus": "^0.54.5"
-}
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christinelovett/hello-node.git"
+  },
+  "name": "hello-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christine Lovett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christinelovett/hello-node/issues"
+  },
+  "homepage": "https://github.com/christinelovett/hello-node#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.24.7",
+    "ejs": "^2.5.7",
+    "express": "^4.16.3",
+    "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-header": "^1.8.7",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.5.4",
+    "jade": "^1.11.0",
+    "jquery": "^1.11.3",
+    "nib": "^1.1.2",
+    "nodemon": "^1.18.4",
+    "stylus": "^0.54.5"
+  }
 }
