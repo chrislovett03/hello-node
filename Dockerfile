@@ -1,4 +1,4 @@
-FROM node:10.11-stretch
+FROM node:9.5.0-stretch
 WORKDIR /app
 COPY package.json /app
 RUN npm install
