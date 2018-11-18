@@ -5,10 +5,7 @@ variables:
 image: docker:latest
 
 before_script:
-
-  - curl -k https://dtr.clovett.dtcntr.net/ca -o /usr/local/share/ca-certificates/dtr.clovett.dtcntr.net.crt
-  - update-ca-certificates
-  - service docker restart
+  
   - docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER
   - export DOCKER_CONTENT_TRUST_ROOT_PASSPHRASE="password"
   - export DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE="password"
