@@ -5,7 +5,9 @@ variables:
 image: docker:latest
 
 before_script:
-  
+  - curl -L https://github.com/theupdateframework/notary/releases/download/v0.6.1/notary-Linux-amd64 -o notary
+  - chmod +x notary
+  - sudo mv notary /usr/bin/
   - docker login -u $DTR_USERNAME -p $DTR_PASSWORD $DTR_SERVER
   - export DOCKER_CONTENT_TRUST_ROOT_PASSPHRASE="password"
   - export DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE="password"
